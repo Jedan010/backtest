@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 class Event(object):
     """
     作为事件的基本 class 为所有子事件提供一个界面，以触发交易
@@ -116,7 +118,7 @@ class FillEvent(Event):
         此处以美国为例
         """
         full_cost = 1.3
-        if self.quantity <=500：
+        if self.quantity <= 500 :
             full_cost = max(1.3, 0.013 * self.quantity)
         else:
             full_cost = max(1.3, 0.008 * self.quantity)
